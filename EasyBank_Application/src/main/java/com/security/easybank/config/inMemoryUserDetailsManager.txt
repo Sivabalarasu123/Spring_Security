@@ -1,0 +1,35 @@
+//	Approach 1
+//	@Bean
+//	public InMemoryUserDetailsManager userDetailsService() {
+//		UserDetails admin = org.springframework.security.core.userdetails.User.withDefaultPasswordEncoder()
+//											.username("admin")
+//											.password("12345")
+//											.roles("admin")
+//											.build();
+//		UserDetails user = org.springframework.security.core.userdetails.User.withDefaultPasswordEncoder()
+//											.username("user")
+//											.password("12345")
+//											.roles("user")
+//											.build();
+//			
+//		return new InMemoryUserDetailsManager(admin,user);
+//	}
+	
+//	Approach 2
+//		public InMemoryUserDetailsManager userDetailsService() {
+//		UserDetails admin = org.springframework.security.core.userdetails.User.withUsername("admin")
+//							.password("12345")
+//							.authorities("admin")
+//							.build();
+//		UserDetails user = org.springframework.security.core.userdetails.User.withUsername("user")
+//							.password("12345")
+//							.authorities("read")
+//							.build();
+//		
+//		return new InMemoryUserDetailsManager(admin,user);
+//		
+//}
+//		@Bean
+//		public PasswordEncoder passwordEncoder() {
+//			return NoOpPasswordEncoder.getInstance();
+//		}
